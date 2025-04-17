@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainCSS/output.css">
+    <title>Quote Genetator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Delius&family=Delius+Swash+Caps&family=Noto+Color+Emoji&family=Roboto+Slab:wght@100..900&display=swap');
+        .font-1 {
+            font-family: "Delius", cursive;
+        }
+        .font-2 {
+            font-family: "Delius Swash Caps", cursive;
+
+        }
+        .font-3 {
+            font-family: "Roboto Slab", serif;
+        }
+        .font-4 {
+            font-family: "Noto Color Emoji", sans-serif;
+        }
+        .font-5 {
+            font-family: "Arvo", serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen w-full bg-gradient-to-tl from-[#f472b6] via-[#be185d] to-[#831843]">
+    <section class="main flex flex-col min-h-screen justify-between py-10">
+        <a href="https://github.com/piyushgupta04" target="_blank" class="fixed hover:scale-110 transition-transform top-3 z-50 right-3 hidden sm:block">
+            <svg class="w-10 h-10  text-pink-200 hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 .297a12 12 0 00-3.794 23.4c.6.113.82-.258.82-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.334-1.757-1.334-1.757-1.09-.746.082-.731.082-.731 1.205.084 1.838 1.236 1.838 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.467-1.333-5.467-5.933 0-1.31.468-2.382 1.236-3.222-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 016.003 0c2.29-1.552 3.297-1.23 3.297-1.23.654 1.653.242 2.873.12 3.176.77.84 1.234 1.912 1.234 3.222 0 4.61-2.807 5.63-5.48 5.922.43.37.823 1.102.823 2.222v3.293c0 .322.217.694.825.576A12.006 12.006 0 0012 .297z"/>
+              </svg>
+        </a>
+        <div class="h1 flex justify-center h-20 items-center">
+            <h1 class="text-2xl text-pink-200 lg:text-3xl font-5">Quote Generator</h1>
+        </div>
+        <div class="quote-gen font-5 text-2xl flex items-center justify-center h-48 text-pink-200 ">
+            <p class="px-7 text-left max-w-lg lg:max-w-full ">Hit the 'Generate' button to generate a <span class="beauty text-pink-400">Beautiful Quote</span></p>
+        </div>
+        <div class="btn-box flex justify-center items-center">
+            <button class="p-4 font-5 h-16 border-2 rounded-2xl border-pink-300 text-[20px] text-pink-200 hover:text-pink-700 hover:scale-105 transition-transform hover:bg-pink-100">Generate</button>
+        </div>
+    </section>
+</body>
+</html>
