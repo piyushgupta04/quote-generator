@@ -13,9 +13,9 @@ const QUOTE_URL = "https://quotes-api-self.vercel.app/quote";
 
 const asyncFn = async () => {
   const response = await fetch(QUOTE_URL)
-  console.log(response)
+  // console.log(response)
   let usableData = await response.json()
-  console.log(usableData)
+  // console.log(usableData)
   quoteText.innerText = usableData.quote
   hiAuthor.innerHTML = "~" + usableData.author
 }
