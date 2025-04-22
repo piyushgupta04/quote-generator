@@ -9,18 +9,20 @@ const pDivChild = pDiv.children
 const svgGH = document.getElementById("svg-gh")
 let isDark = false
 
-const QUOTE_URL = "https://quotes-api-self.vercel.app/quote";
+
+const QUOTE_URL = "https://api-server-hav7.onrender.com/quotes";
 
 const asyncFn = async () => {
   const response = await fetch(QUOTE_URL)
   // console.log(response)
   let usableData = await response.json()
   // console.log(usableData)
-  quoteText.innerText = usableData.quote
-  hiAuthor.innerHTML = "~" + usableData.author
+  const totalLength = usableData.length
+  const idx = Math.floor(Math.random() * totalLength);
+  console.log(idx)
+  quoteText.innerText = usableData[idx].quote
+  hiAuthor.innerHTML = " ~" + usableData[idx].author
 }
-
-
 
 btn.addEventListener("click", () => {
   asyncFn()
