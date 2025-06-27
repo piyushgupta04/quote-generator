@@ -12,20 +12,30 @@ let isDark = false
 
 const QUOTE_URL = "https://api-server-hav7.onrender.com/quotes";
 
-const asyncFn = async () => {
-  const response = await fetch(QUOTE_URL)
-  // console.log(response)
-  let usableData = await response.json()
-  // console.log(usableData)
-  const totalLength = usableData.length
-  const idx = Math.floor(Math.random() * totalLength);
-  console.log(idx)
-  quoteText.innerText = usableData[idx].quote
-  hiAuthor.innerHTML = " ~" + usableData[idx].author
+async function getQuote () {
+
+  pDivChild[0].innerText = "Loading Quote ...";
+  pDivChild[1].innerText = "";
+  const json = await axios.get(QUOTE_URL)
+  .then((res)=>{
+    pDivChild[0].innerText = "";
+    const arrLen = res.data.length
+    const randNum = Math.floor(Math.random() * res.data.length) + 1;
+    pDivChild[0].innerText = res.data[randNum].quote;
+    pDivChild[1].innerText = `~${res.data[randNum].author}`
+    return "Done"
+  })
+  .catch((err)=>{
+    pDivChild[0].innerText = "Unable to fetch quote from API ❌"
+    console.log(err)
+    return "Error Occured FR"
+  })
+  return "function executed FR"
 }
 
-btn.addEventListener("click", () => {
-  asyncFn()
+
+btn.addEventListener("click", async () => {
+  await getQuote()
 });
 
 const applyDarkMode = () => {
